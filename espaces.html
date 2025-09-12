@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Espaces Galsen_Dev221</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+         :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #3B82F6;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #3B82F6;
+            }
+        }
+        
+        .parallax {
+            transform: translateY(var(--scroll-y, 0));
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease;
+        }
+        
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="logo.png" alt="" style="width: 220px;">
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-300 hover:text-white transition-colors">Accueil</a>
+                    <a href="#" class="text-primary">Espaces</a>
+                    <a href="communaute.html" class="text-slate-300 hover:text-white transition-colors">Communauté</a>
+                    <a href="abonnement.html" class="text-slate-300 hover:text-white transition-colors">Abonnements</a>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/221770000000" target="_blank" class="group bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/25">
+                        <i class="ri-whatsapp-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.gg/votre-serveur" target="_blank" class="group bg-gradient-to-br from-indigo-600 to-purple-600 p-3 rounded-xl hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/25">
+                        <i class="ri-discord-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/votre-username" target="_blank" class="group bg-gradient-to-br from-sky-500 to-blue-600 p-3 rounded-xl hover:from-sky-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25">
+                        <i class="ri-telegram-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-bold mb-8 fade-in">Nos Espaces de Travail</h1>
+            <p class="text-xl text-slate-300 mb-16 max-w-3xl fade-in">Découvrez nos espaces modernes et fonctionnels conçus pour stimuler la créativité et la productivité de la communauté tech de Dakar.</p>
+
+            <div class="grid lg:grid-cols-2 gap-16 mb-24">
+                <div class="fade-in">
+                    <img src="https://readdy.ai/api/search-image?query=Modern%20open%20plan%20coworking%20space%20in%20Dakar%20with%20developers%20working%2C%20natural%20lighting%2C%20contemporary%20African%20design%20elements%2C%20multiple%20workstations%2C%20plants%2C%20collaborative%20atmosphere%2C%20tech%20startup%20environment&width=800&height=600&seq=coworking-main&orientation=landscape"
+                        alt="Espace Coworking" class="w-full h-[400px] object-cover rounded-xl shadow-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Espace Coworking</h2>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="ri-user-line text-primary mr-2"></i>
+                            <span>50 postes de travail</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-wifi-line text-primary mr-2"></i>
+                            <span>WiFi 1Gb/s</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-primary mr-2"></i>
+                            <span>24/7 accès</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-plug-line text-primary mr-2"></i>
+                            <span>Prises électriques</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6">Notre espace de coworking offre un environnement dynamique et collaboratif idéal pour les développeurs freelances et les startups. Profitez d'un cadre moderne avec tout l'équipement nécessaire pour travailler efficacement.</p>
+                    <div class="flex gap-4">
+                        <button class="bg-primary hover:bg-blue-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                            Réserver un poste
+                        </button>
+                        <button id="openPopup" class="border border-primary text-primary hover:bg-primary/10 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                            Visite virtuelle
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Overlay & Popup -->
+                <div id="popup" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+                    <div class="bg-white rounded-2xl shadow-lg w-156 p-6 relative">
+                        <!-- Bouton fermer -->
+                        <button id="closePopup" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">
+                            &times;
+                        </button>
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/P1nLLif6T2k?si=K3esj_0xeoP0sVEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <script>
+                    const openBtn = document.getElementById('openPopup');
+                    const closeBtn = document.getElementById('closePopup');
+                    const popup = document.getElementById('popup');
+
+                    openBtn.addEventListener('click', () => {
+                        popup.classList.remove('hidden');
+                    });
+
+                    closeBtn.addEventListener('click', () => {
+                        popup.classList.add('hidden');
+                    });
+
+                    // Fermer en cliquant sur l'overlay
+                    popup.addEventListener('click', (e) => {
+                        if (e.target === popup) {
+                            popup.classList.add('hidden');
+                        }
+                    });
+                </script>
+
+                <div class="space-y-8">
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-cup-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Coin Café & Détente</h3>
+                                <p class="text-slate-400">Café gratuit & espace de détente</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Profitez d'une pause café dans notre espace détente confortable. Café, thé et eau sont disponibles gratuitement toute la journée.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-printer-line text-2xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Services Business</h3>
+                                <p class="text-slate-400">Impression & Scan</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Accédez à nos services d'impression et de numérisation professionnels. Parfait pour vos documents et présentations.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-mail-lock-line text-2xl text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Casiers Sécurisés</h3>
+                                <p class="text-slate-400">Stockage personnel</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Des casiers sécurisés sont disponibles pour ranger vos effets personnels pendant votre journée de travail.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 mb-24">
+                <div class="order-2 lg:order-1 space-y-8">
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-projector-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Équipement Pro</h3>
+                                <p class="text-slate-400">Technologie de pointe</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Écran de projection 4K</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Système de visioconférence</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Tableau blanc interactif</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Système audio premium</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-calendar-line text-2xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Réservation Flexible</h3>
+                                <p class="text-slate-400">À l'heure ou à la journée</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Réservez nos salles selon vos besoins : à l'heure pour des réunions ponctuelles ou à la journée pour vos formations et workshops.</p>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 fade-in">
+                    <img src="https://readdy.ai/api/search-image?query=Modern%20meeting%20room%20in%20Dakar%20with%20glass%20walls%2C%20contemporary%20design%2C%20large%20conference%20table%2C%20presentation%20screen%2C%20professional%20lighting%2C%20tech-ready%20workspace&width=800&height=600&seq=meeting-room-main&orientation=landscape"
+                        alt="Salles de Réunion" class="w-full h-[400px] object-cover rounded-xl shadow-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Salles de Réunion</h2>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="ri-group-line text-primary mr-2"></i>
+                            <span>4 à 20 personnes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-door-lock-line text-primary mr-2"></i>
+                            <span>Accès privé</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-computer-line text-primary mr-2"></i>
+                            <span>Tech ready</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-ventilation-line text-primary mr-2"></i>
+                            <span>Climatisation</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6">5 salles de réunion modulables équipées des dernières technologies pour vos réunions, présentations et formations. Parfait pour les sessions de travail en équipe.
+                    </p>
+                    <div class="flex gap-4">
+                        <button class="bg-primary hover:bg-blue-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                            Réserver une salle
+                        </button>
+                        <button class="border border-primary text-primary hover:bg-primary/10 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                            Voir les disponibilités
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="fade-in">
+                    <img src="https://readdy.ai/api/search-image?query=Private%20office%20space%20in%20Dakar%20with%20modern%20furniture%2C%20large%20windows%2C%20minimalist%20design%2C%20tech%20startup%20environment%2C%20professional%20workspace%2C%20contemporary%20African%20art&width=800&height=600&seq=private-office-main&orientation=landscape"
+                        alt="Bureaux Privés" class="w-full h-[400px] object-cover rounded-xl shadow-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Bureaux Privés</h2>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="ri-building-line text-primary mr-2"></i>
+                            <span>15 bureaux</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-team-line text-primary mr-2"></i>
+                            <span>1 à 8 personnes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-lock-line text-primary mr-2"></i>
+                            <span>Sécurisé 24/7</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-mail-line text-primary mr-2"></i>
+                            <span>Service courrier</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6">Des bureaux privés entièrement équipés pour les équipes qui ont besoin d'un espace dédié. Personnalisez votre espace selon vos besoins et votre image de marque.
+                    </p>
+                    <div class="flex gap-4">
+                        <button class="bg-primary hover:bg-blue-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                            Demander un devis
+                        </button>
+                        <button class="border border-primary text-primary hover:bg-primary/10 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                            Planifier une visite
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-shield-check-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Sécurité & Accès</h3>
+                                <p class="text-slate-400">Contrôle d'accès 24/7</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Accès sécurisé par badge, vidéosurveillance et personnel de sécurité pour garantir votre tranquillité d'esprit.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-customer-service-2-line text-2xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Support Dédié</h3>
+                                <p class="text-slate-400">Assistance sur place</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Une équipe dédiée est à votre disposition pour vous accompagner et répondre à vos besoins au quotidien.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 fade-in">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="ri-paint-brush-line text-2xl text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Personnalisation</h3>
+                                <p class="text-slate-400">Aménagement sur mesure</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Possibilité de personnaliser l'aménagement de votre bureau selon vos besoins spécifiques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8 fade-in">Prêt à nous rejoindre ?</h2>
+            <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto fade-in">Découvrez nos espaces de travail et rejoignez la communauté tech la plus dynamique de Dakar.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-primary hover:bg-blue-600 px-8 py-4 !rounded-button whitespace-nowrap transition-colors">
+                    Réserver maintenant
+                </button>
+                <button class="border border-primary text-primary hover:bg-primary/10 px-8 py-4 !rounded-button whitespace-nowrap transition-colors">
+                    Planifier une visite
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-black border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="logo.png" alt="" style="width: 220px;"> </div>
+                    <p class="text-slate-400 mb-6">La communauté de développeurs la plus dynamique du Sénégal. Ensemble, nous construisons l'avenir technologique de l'Afrique.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-facebook-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-twitter-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-linkedin-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-github-line text-slate-400 hover:text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-slate-400 hover:text-white transition-colors">Accueil</a>
+                        </li>
+                        <li><a href="#espaces" class="text-slate-400 hover:text-white transition-colors">Espaces</a>
+                        </li>
+                        <li><a href="#communaute" class="text-slate-400 hover:text-white transition-colors">Communauté</a></li>
+                        <li><a href="#abonnements" class="text-slate-400 hover:text-white transition-colors">Abonnements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-map-pin-line mr-3"></i> Plateau, Dakar, Sénégal
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-phone-line mr-3"></i> +221 33 123 45 67
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-mail-line mr-3"></i> contact@devhub.sn
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-4">Restez informé des derniers événements et formations.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Votre email" class="flex-1 bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-primary">
+                        <button class="bg-primary hover:bg-blue-600 px-4 py-2 !rounded-button whitespace-nowrap transition-colors">
+                            <i class="ri-send-plane-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm">© 2025 DevHub Sénégal. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script id="scroll-animations">
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script id="counter-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter');
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            };
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+    <script id="parallax-effect">
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax');
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    element.style.setProperty('--scroll-y', `${scrolled * speed}px`);
+                });
+            });
+        });
+    </script>
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="https://static.readdy.ai/static/share.js"></script>
+</body>
+
+</html>

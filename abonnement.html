@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnements Galsen_Dev221</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+         :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="logo.png" alt="" style="width: 220px;">
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-300 hover:text-white transition-colors">Accueil</a>
+                    <a href="communaute.html" class="text-slate-300 hover:text-white transition-colors">Espaces</a>
+                    <a href="communaute.html" class="text-slate-300 hover:text-white transition-colors">Communauté</a>
+                    <a href="#" class="text-primary">Abonnements</a>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/221770000000" target="_blank" class="group bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/25">
+                        <i class="ri-whatsapp-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.gg/votre-serveur" target="_blank" class="group bg-gradient-to-br from-indigo-600 to-purple-600 p-3 rounded-xl hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/25">
+                        <i class="ri-discord-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/votre-username" target="_blank" class="group bg-gradient-to-br from-sky-500 to-blue-600 p-3 rounded-xl hover:from-sky-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25">
+                        <i class="ri-telegram-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-6 fade-in">Nos Abonnements</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto fade-in">Choisissez l'abonnement qui correspond le mieux à vos besoins et rejoignez notre communauté dynamique de développeurs.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 card-hover fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Étudiant</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">15 000</span>
+                        <span class="text-slate-400"> FCFA/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Accès coworking (9h-17h)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>WiFi haut débit</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Accès aux événements</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Support communauté</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-slate-600 hover:bg-slate-500 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Choisir ce Plan
+                    </button>
+                </div>
+                <div class="bg-gradient-to-b from-primary to-blue-600 p-8 rounded-xl border-2 border-primary card-hover fade-in transform scale-105">
+                    <div class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
+                        Plus Populaire
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Professionnel</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">45 000</span>
+                        <span class="text-blue-100"> FCFA/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-white">
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-white mr-3"></i>
+                            <span>Accès coworking 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-white mr-3"></i>
+                            <span>5h salles de réunion/mois</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-white mr-3"></i>
+                            <span>Formations gratuites</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-white mr-3"></i>
+                            <span>Mentorat personnalisé</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-white mr-3"></i>
+                            <span>Accès restaurant</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-primary hover:bg-slate-100 px-6 py-3 !rounded-button whitespace-nowrap transition-colors font-semibold">
+                        Choisir ce Plan
+                    </button>
+                </div>
+                <div class="bg-slate-700 p-8 rounded-xl border border-slate-600 card-hover fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Entreprise</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">120 000</span>
+                        <span class="text-slate-400"> FCFA/mois</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Bureau privé dédié</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Salles de réunion illimitées</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Support technique prioritaire</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Événements privés</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-3"></i>
+                            <span>Branding personnalisé</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-secondary hover:bg-emerald-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Nous Contacter
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-4xl mx-auto bg-slate-800 rounded-xl p-8 border border-slate-700 mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8">Questions Fréquentes</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Comment choisir mon abonnement ?</h3>
+                    <p class="text-slate-300">Nous vous recommandons de choisir votre abonnement en fonction de vos besoins en espace de travail, de la fréquence d'utilisation et des services dont vous avez besoin. N'hésitez pas à nous contacter pour un conseil personnalisé.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Puis-je changer d'abonnement ?</h3>
+                    <p class="text-slate-300">Oui, vous pouvez changer d'abonnement à tout moment. Le changement prendra effet au début du mois suivant, et la différence de prix sera calculée au prorata.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Quels sont les moyens de paiement acceptés ?</h3>
+                    <p class="text-slate-300">Nous acceptons les paiements par carte bancaire, Orange Money, Wave et virement bancaire. Le paiement est effectué mensuellement ou annuellement selon votre choix.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Y a-t-il un engagement minimum ?</h3>
+                    <p class="text-slate-300">Non, nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis d'un mois.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center mb-20">
+            <h2 class="text-3xl font-bold mb-8 fade-in">Besoin d'un Plan Personnalisé ?</h2>
+            <p class="text-xl text-slate-300 mb-8 fade-in">Nous proposons des solutions sur mesure pour les entreprises et les équipes avec des besoins spécifiques.</p>
+            <button class="bg-primary hover:bg-blue-600 px-8 py-4 !rounded-button whitespace-nowrap transition-colors text-lg">
+                Contactez-nous
+            </button>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold mb-6">Pourquoi Choisir DevHub ?</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mr-4 shrink-0">
+                                <i class="ri-community-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Communauté Active</h3>
+                                <p class="text-slate-300">Rejoignez une communauté de plus de 450 développeurs passionnés et participez à des événements enrichissants.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mr-4 shrink-0">
+                                <i class="ri-wifi-line text-2xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Infrastructure Premium</h3>
+                                <p class="text-slate-300">Profitez d'une connexion internet haut débit, d'espaces modernes et d'équipements de qualité.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mr-4 shrink-0">
+                                <i class="ri-calendar-line text-2xl text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Flexibilité Totale</h3>
+                                <p class="text-slate-300">Des abonnements adaptables à vos besoins, sans engagement et avec des options personnalisables.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative fade-in">
+                    <img src="https://readdy.ai/api/search-image?query=modern%20tech%20workspace%20in%20Dakar%20with%20diverse%20group%20of%20developers%20collaborating%2C%20natural%20lighting%2C%20contemporary%20African%20design%20elements%2C%20professional%20environment&width=600&height=400&seq=workspace-benefits&orientation=landscape"
+                        alt="Espace de travail" class="w-full h-[400px] object-cover rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-black border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="logo.png" alt="" style="width: 220px;"> </div>
+                    <p class="text-slate-400 mb-6">La communauté de développeurs la plus dynamique du Sénégal. Ensemble, nous construisons l'avenir technologique de l'Afrique.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-facebook-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-twitter-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-linkedin-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-github-line text-slate-400 hover:text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-slate-400 hover:text-white transition-colors">Accueil</a>
+                        </li>
+                        <li><a href="espaces.html" class="text-slate-400 hover:text-white transition-colors">Espaces</a>
+                        </li>
+                        <li><a href="communaute.html" class="text-slate-400 hover:text-white transition-colors">Communauté</a></li>
+                        <li><a href="#abonnements" class="text-slate-400 hover:text-white transition-colors">Abonnements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-map-pin-line mr-3"></i> Plateau, Dakar, Sénégal
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-phone-line mr-3"></i> +221 33 123 45 67
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-mail-line mr-3"></i> contact@devhub.sn
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-4">Restez informé des derniers événements et formations.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Votre email" class="flex-1 bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-primary">
+                        <button class="bg-primary hover:bg-blue-600 px-4 py-2 !rounded-button whitespace-nowrap transition-colors">
+                            <i class="ri-send-plane-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm">© 2025 DevHub Sénégal. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faders = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            faders.forEach(fade => observer.observe(fade));
+        });
+    </script>
+
+
+</body>
+
+</html>

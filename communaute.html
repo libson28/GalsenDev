@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communautés Galsen_Dev221</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+         :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #3B82F6;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #3B82F6;
+            }
+        }
+        
+        .parallax {
+            transform: translateY(var(--scroll-y, 0));
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease;
+        }
+        
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2px;
+            border-radius: 1rem;
+        }
+        
+        .glass-effect {
+            background: rgba(17, 25, 40, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        
+        .icon-glow {
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="" style="width: 220px;">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-300 hover:text-white transition-colors">Accueil</a>
+                    <a href="espaces.html" class="text-slate-300 hover:text-white transition-colors">Espaces</a>
+                    <a href="#" class="text-primary">Communauté</a>
+                    <a href="abonnement.html" class="text-slate-300 hover:text-white transition-colors">Abonnements</a>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/221770000000" target="_blank" class="group bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/25">
+                        <i class="ri-whatsapp-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.gg/votre-serveur" target="_blank" class="group bg-gradient-to-br from-indigo-600 to-purple-600 p-3 rounded-xl hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/25">
+                        <i class="ri-discord-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/votre-username" target="_blank" class="group bg-gradient-to-br from-sky-500 to-blue-600 p-3 rounded-xl hover:from-sky-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25">
+                        <i class="ri-telegram-line text-lg text-white icon-glow group-hover:animate-pulse"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-6 fade-in">Nos Communautés Tech</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto fade-in">Découvrez les différentes communautés tech de Galsen_Dev Sénégal et leurs leaders passionnés qui contribuent à l'écosystème numérique local.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 fade-in">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-reactjs-line text-3xl text-primary"></i>
+                        </div>
+                        <span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm">120 membres</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">React Dakar</h3>
+                    <p class="text-slate-300 mb-6">Communauté dédiée au développement d'applications web modernes avec React et son écosystème.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20african%20male%20tech%20leader%20portrait%20with%20glasses%2C%20modern%20office%20background&width=100&height=100&seq=leader1&orientation=squarish" alt="Leader" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Moussa Ndiaye</h4>
+                            <p class="text-sm text-slate-400">Lead Developer @ Wave</p>
+                        </div>
+                    </div>
+                    <button id="openPopup" class="w-full bg-primary hover:bg-blue-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Rejoindre
+                    </button>
+                </div>
+
+                <div id="popup" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
+                    <div class="gradient-border animate-scale-in">
+                        <div class="glass-effect rounded-2xl w-80 p-8 relative text-center">
+                            <!-- Bouton fermer stylisé -->
+                            <button id="closePopup" class="absolute top-4 right-4 text-gray-300 hover:text-white hover:bg-white/10 rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 group">
+                    <i class="ri-close-line text-xl group-hover:rotate-90 transition-transform duration-200"></i>
+                </button>
+
+                            <!-- Icône de contact -->
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                                    <i class="ri-customer-service-2-line text-2xl text-white"></i>
+                                </div>
+                            </div>
+
+                            <!-- Titre -->
+                            <h2 class="text-2xl font-bold text-white mb-2">Rejoignez la communauté</h2>
+                            <p class="text-gray-300 text-sm mb-8">Choisissez votre plateforme préférée</p>
+
+                            <!-- Boutons de contact -->
+                            <div class="flex justify-center gap-6">
+                                <!-- WhatsApp -->
+                                <a href="https://wa.me/221770000000" target="_blank" class="group bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-2xl hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/25">
+                                    <i class="ri-whatsapp-line text-2xl text-white icon-glow group-hover:animate-pulse"></i>
+                                </a>
+
+                                <!-- Discord -->
+                                <a href="https://discord.gg/votre-serveur" target="_blank" class="group bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-2xl hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/25">
+                                    <i class="ri-discord-line text-2xl text-white icon-glow group-hover:animate-pulse"></i>
+                                </a>
+
+                                <!-- Telegram -->
+                                <a href="https://t.me/votre-username" target="_blank" class="group bg-gradient-to-br from-sky-500 to-blue-600 p-4 rounded-2xl hover:from-sky-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25">
+                                    <i class="ri-telegram-line text-2xl text-white icon-glow group-hover:animate-pulse"></i>
+                                </a>
+                            </div>
+
+                            <!-- Message de fermeture -->
+                            <p class="text-gray-400 text-xs mt-6">Cliquez à l'extérieur pour fermer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const openBtn = document.getElementById('openPopup');
+                    const closeBtn = document.getElementById('closePopup');
+                    const popup = document.getElementById('popup');
+
+                    // Ouvrir la popup
+                    openBtn.addEventListener('click', () => {
+                        popup.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                    });
+
+                    // Fermer la popup
+                    const closePopup = () => {
+                        popup.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    };
+
+                    closeBtn.addEventListener('click', closePopup);
+
+                    // Fermer en cliquant à l'extérieur
+                    popup.addEventListener('click', (e) => {
+                        if (e.target === popup) {
+                            closePopup();
+                        }
+                    });
+
+                    // Fermer avec Échap
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && !popup.classList.contains('hidden')) {
+                            closePopup();
+                        }
+                    });
+                </script>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 fade-in">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-python-line text-3xl text-secondary"></i>
+                        </div>
+                        <span class="bg-secondary/20 text-secondary px-4 py-1 rounded-full text-sm">85 membres</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Python Sénégal</h3>
+                    <p class="text-slate-300 mb-6">Groupe dédié au développement Python, Data Science et Intelligence Artificielle.
+                    </p>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20african%20female%20tech%20leader%20portrait%2C%20confident%20smile%2C%20modern%20office%20background&width=100&height=100&seq=leader2&orientation=squarish" alt="Leader" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Aminata Diop</h4>
+                            <p class="text-sm text-slate-400">Data Scientist @ Orange</p>
+                        </div>
+                    </div>
+                    <button class="w-full bg-secondary hover:bg-emerald-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Rejoindre
+                    </button>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 fade-in">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-yellow-500/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-flutter-line text-3xl text-yellow-500"></i>
+                        </div>
+                        <span class="bg-yellow-500/20 text-yellow-500 px-4 py-1 rounded-full text-sm">95 membres</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Flutter Dakar</h3>
+                    <p class="text-slate-300 mb-6">Communauté de développeurs mobile passionnés par Flutter et le développement cross-platform.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20african%20male%20tech%20leader%20portrait%2C%20modern%20casual%20style%2C%20startup%20environment&width=100&height=100&seq=leader3&orientation=squarish" alt="Leader" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ibrahima Sall</h4>
+                            <p class="text-sm text-slate-400">CTO @ Yobante Express</p>
+                        </div>
+                    </div>
+                    <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Rejoindre
+                    </button>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 fade-in">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-red-500/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-database-2-line text-3xl text-red-500"></i>
+                        </div>
+                        <span class="bg-red-500/20 text-red-500 px-4 py-1 rounded-full text-sm">75 membres</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">DevOps Sénégal</h3>
+                    <p class="text-slate-300 mb-6">Groupe focalisé sur les pratiques DevOps, le Cloud Computing et l'automatisation.
+                    </p>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20african%20female%20tech%20leader%20portrait%2C%20modern%20professional%20attire%2C%20tech%20office&width=100&height=100&seq=leader4&orientation=squarish" alt="Leader" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Fatou Sarr</h4>
+                            <p class="text-sm text-slate-400">DevOps Engineer @ Jumia</p>
+                        </div>
+                    </div>
+                    <button class="w-full bg-red-500 hover:bg-red-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Rejoindre
+                    </button>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 fade-in">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-code-s-slash-line text-3xl text-purple-500"></i>
+                        </div>
+                        <span class="bg-purple-500/20 text-purple-500 px-4 py-1 rounded-full text-sm">110 membres</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">JavaScript Dakar</h3>
+                    <p class="text-slate-300 mb-6">Communauté dédiée à l'écosystème JavaScript, Node.js et les frameworks modernes.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20african%20male%20tech%20leader%20portrait%2C%20casual%20tech%20style%2C%20startup%20environment&width=100&height=100&seq=leader5&orientation=squarish" alt="Leader" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Omar Diallo</h4>
+                            <p class="text-sm text-slate-400">Senior Dev @ Teranga Tech</p>
+                        </div>
+                    </div>
+                    <button class="w-full bg-purple-500 hover:bg-purple-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Rejoindre
+                    </button>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 fade-in">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 bg-pink-500/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-window-line text-3xl text-pink-500"></i>
+                        </div>
+                        <span class="bg-pink-500/20 text-pink-500 px-4 py-1 rounded-full text-sm">65 membres</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">UI/UX Dakar</h3>
+                    <p class="text-slate-300 mb-6">Communauté de designers passionnés par l'expérience utilisateur et l'interface.
+                    </p>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20african%20female%20tech%20leader%20portrait%2C%20creative%20style%2C%20design%20studio%20background&width=100&height=100&seq=leader6&orientation=squarish" alt="Leader" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Aïda Mbaye</h4>
+                            <p class="text-sm text-slate-400">Lead Designer @ Coin</p>
+                        </div>
+                    </div>
+                    <button class="w-full bg-pink-500 hover:bg-pink-600 px-6 py-3 !rounded-button whitespace-nowrap transition-colors">
+                        Rejoindre
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 fade-in">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Créez Votre Communauté</h2>
+                        <p class="text-slate-300 mb-6">Vous avez une expertise technique et souhaitez rassembler d'autres passionnés ? Lancez votre propre communauté tech au sein de DevHub.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Support logistique complet</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Espace de réunion gratuit</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Visibilité sur notre plateforme</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="ri-check-line text-secondary mr-3"></i>
+                                <span>Accompagnement personnalisé</span>
+                            </li>
+                        </ul>
+                        <button class="bg-primary hover:bg-blue-600 px-8 py-4 !rounded-button whitespace-nowrap transition-colors">
+                            Proposer une Communauté
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=tech%20community%20meetup%20in%20modern%20african%20coworking%20space%2C%20diverse%20group%20of%20developers%20collaborating%2C%20professional%20environment&width=600&height=400&seq=community-create&orientation=landscape"
+                            alt="Community Meetup" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <footer class="py-16 bg-black border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="logo.png" alt="" style="width: 220px;">
+                    </div>
+                    <p class="text-slate-400 mb-6">La communauté de développeurs la plus dynamique du Sénégal. Ensemble, nous construisons l'avenir technologique de l'Afrique.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-facebook-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-twitter-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-linkedin-line text-slate-400 hover:text-white"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-github-line text-slate-400 hover:text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-slate-400 hover:text-white transition-colors">Accueil</a>
+                        </li>
+                        <li><a href="#espaces" class="text-slate-400 hover:text-white transition-colors">Espaces</a>
+                        </li>
+                        <li><a href="#communaute" class="text-slate-400 hover:text-white transition-colors">Communauté</a></li>
+                        <li><a href="#abonnements" class="text-slate-400 hover:text-white transition-colors">Abonnements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-map-pin-line mr-3"></i> Plateau, Dakar, Sénégal
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-phone-line mr-3"></i> +221 33 123 45 67
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i class="ri-mail-line mr-3"></i> contact@devhub.sn
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-4">Restez informé des derniers événements et formations.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Votre email" class="flex-1 bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-primary">
+                        <button class="bg-primary hover:bg-blue-600 px-4 py-2 !rounded-button whitespace-nowrap transition-colors">
+                            <i class="ri-send-plane-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm">© 2025 DevHub Sénégal. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">Mentions légales</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">Politique de
+                        confidentialité</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition-colors">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script id="scroll-animations">
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script id="counter-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter');
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            };
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+    <script id="parallax-effect">
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax');
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    element.style.setProperty('--scroll-y', `${scrolled * speed}px`);
+                });
+            });
+        });
+    </script>
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="https://static.readdy.ai/static/share.js"></script>
+</body>
+
+</html>
